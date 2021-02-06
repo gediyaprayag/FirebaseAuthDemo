@@ -8,22 +8,32 @@
 import SwiftUI
 
 struct SignUpView: View {
+    @State var username: String = ""
     @State var email: String = ""
     @State var password: String = ""
     @State var showAlert: Bool = false
     @State var alertMsg: String = ""
     
+    @ObservedObject var store: AccountHelper = AccountHelper()
+    
     var body: some View {
-        VStack(alignment: .trailing) {
+        LoadingView(isShowing: $store.loading) { content }
+            .navigationBarTitle("SignUp", displayMode: .inline)
+    }
+    
+    var content: some View {
+        VStack(alignment: .trailing, spacing: 16) {
             Spacer()
+            TextField("Username", text: $username)
+                .padding(12)
+                .borderdTextField()
+            
             TextField("Email", text: $email)
                 .keyboardType(.emailAddress)
                 .padding(12)
                 .borderdTextField()
             
-            SecureField("Password", text: $password)
-                .padding(12)
-                .borderdTextField()
+            PasswordField(value: $password)
             
             Button(action: signUp, label: {
                 Text("SignUp")
@@ -32,7 +42,7 @@ struct SignUpView: View {
                     .frame(height: 50, alignment: .center)
                     .background(Color.black)
                     .cornerRadius(8)
-            }).padding(.top, 12)
+            }).padding(.top, 16)
             
             Spacer()
             
@@ -50,7 +60,7 @@ struct SignUpView: View {
             alertMsg = "Password must be 8 characters long."
             showAlert = true
         } else {
-            //Signup
+            store.createUser(email: email, password: password, username: username)
         }
     }
     

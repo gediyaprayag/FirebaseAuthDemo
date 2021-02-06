@@ -6,10 +6,17 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct ContentView: View {
     var body: some View {
-        LoginView() 
+        NavigationView {
+            if let _ = Auth.auth().currentUser {
+                HomeView()
+            } else {
+                LoginView()
+            }
+        }
     }
 }
 

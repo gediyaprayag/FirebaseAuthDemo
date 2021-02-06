@@ -13,7 +13,14 @@ struct LoginView: View {
     @State var showAlert: Bool = false
     @State var alertMsg: String = ""
     
+    @ObservedObject var store: AccountHelper = AccountHelper()
+    
     var body: some View {
+        LoadingView(isShowing: $store.loading) { content }
+            .navigationBarTitle("Login", displayMode: .inline)
+    }
+    
+    var content: some View {
         VStack(alignment: .trailing) {
             Spacer()
             TextField("Email", text: $email)
@@ -21,15 +28,15 @@ struct LoginView: View {
                 .padding(12)
                 .borderdTextField()
             
-            SecureField("Password", text: $password)
-                .padding(12)
-                .borderdTextField()
+            PasswordField(value: $password)
             
-            Button(action: forgotPwd, label: {
-                Text("Forgot password?")
-                    .foregroundColor(.black)
-                    .font(.system(size: 16))
-            }).padding(.top, 8)
+            NavigationLink(
+                destination: ForgotPasswordView(),
+                label: {
+                    Text("Forgot password?")
+                        .foregroundColor(.black)
+                        .font(.system(size: 16))
+                }).padding(.top, 8)
             
             Button(action: login, label: {
                 Text("Login")
@@ -46,11 +53,13 @@ struct LoginView: View {
                 Spacer()
                 Text("Don't have an accout?")
                     .foregroundColor(.black)
-                Button(action: {}, label: {
-                    Text("SignUp Now")
-                        .foregroundColor(.black)
-                        .font(.system(size: 17, weight: .bold))
-                })
+                NavigationLink(
+                    destination: SignUpView(),
+                    label: {
+                        Text("SignUp Now")
+                            .foregroundColor(.black)
+                            .font(.system(size: 17, weight: .bold))
+                    })
                 Spacer()
             }
             
@@ -68,12 +77,8 @@ struct LoginView: View {
             alertMsg = "Password must be 8 characters long."
             showAlert = true
         } else {
-            //Login
+            store.login(email: email, password: password)
         }
-    }
-    
-    func forgotPwd() {
-        
     }
 }
 

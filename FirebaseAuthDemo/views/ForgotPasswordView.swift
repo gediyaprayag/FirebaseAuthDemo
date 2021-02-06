@@ -9,7 +9,15 @@ import SwiftUI
 
 struct ForgotPasswordView: View {
     @State var email: String = ""
+    
+    @ObservedObject var store: AccountHelper = AccountHelper()
+    
     var body: some View {
+        LoadingView(isShowing: $store.loading) { content }
+            .navigationBarTitle("Forgot Password", displayMode: .inline)
+    }
+    
+    var content: some View {
         VStack {
             TextField("Email", text: $email)
                 .keyboardType(.emailAddress)
@@ -28,7 +36,7 @@ struct ForgotPasswordView: View {
     }
     
     func resetPassword() {
-        
+        store.resetPassword(email: email)
     }
 }
 

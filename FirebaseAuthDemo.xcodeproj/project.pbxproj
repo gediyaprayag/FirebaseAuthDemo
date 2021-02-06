@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		A868882453B942B3E43F23BA /* Pods_FirebaseAuthDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706B6789490667703914B98B /* Pods_FirebaseAuthDemo.framework */; };
+		EE7D113025CE52180048BABF /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D112F25CE52180048BABF /* ActivityIndicator.swift */; };
+		EE7D113325CE52CC0048BABF /* AuthenticationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D113225CE52CC0048BABF /* AuthenticationHelper.swift */; };
+		EE7D113725CE53500048BABF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D113625CE53500048BABF /* User.swift */; };
+		EE7D114C25CE5A7D0048BABF /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D114B25CE5A7D0048BABF /* NavigationHelper.swift */; };
+		EE7D115025CE5DA80048BABF /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D114F25CE5DA80048BABF /* PasswordField.swift */; };
+		EE7D115525CE6A180048BABF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D115425CE6A180048BABF /* HomeView.swift */; };
 		EEAEB9B425C52E4E002D34CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEAEB9B325C52E4E002D34CE /* GoogleService-Info.plist */; };
+		EEAEB9B725C537FF002D34CE /* AccountHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAEB9B625C537FF002D34CE /* AccountHelper.swift */; };
 		EEBEC6C825C51AA300D24768 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBEC6C725C51AA300D24768 /* AppDelegate.swift */; };
 		EEBEC6CA25C51AA300D24768 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBEC6C925C51AA300D24768 /* SceneDelegate.swift */; };
 		EEBEC6CC25C51AA300D24768 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBEC6CB25C51AA300D24768 /* ContentView.swift */; };
@@ -26,7 +33,14 @@
 		2B0AF50BF64831092C14C1F0 /* Pods-FirebaseAuthDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAuthDemo.release.xcconfig"; path = "Target Support Files/Pods-FirebaseAuthDemo/Pods-FirebaseAuthDemo.release.xcconfig"; sourceTree = "<group>"; };
 		2B8D22D3D78DD68991D0BB14 /* Pods-FirebaseAuthDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAuthDemo.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseAuthDemo/Pods-FirebaseAuthDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		706B6789490667703914B98B /* Pods_FirebaseAuthDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseAuthDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE7D112F25CE52180048BABF /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		EE7D113225CE52CC0048BABF /* AuthenticationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationHelper.swift; sourceTree = "<group>"; };
+		EE7D113625CE53500048BABF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EE7D114B25CE5A7D0048BABF /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
+		EE7D114F25CE5DA80048BABF /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
+		EE7D115425CE6A180048BABF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EEAEB9B325C52E4E002D34CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EEAEB9B625C537FF002D34CE /* AccountHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHelper.swift; sourceTree = "<group>"; };
 		EEBEC6C425C51AA300D24768 /* FirebaseAuthDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseAuthDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBEC6C725C51AA300D24768 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEBEC6C925C51AA300D24768 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +85,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE7D113525CE53480048BABF /* models */ = {
+			isa = PBXGroup;
+			children = (
+				EE7D113625CE53500048BABF /* User.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		EE7D114E25CE5D9B0048BABF /* components */ = {
+			isa = PBXGroup;
+			children = (
+				EE7D114F25CE5DA80048BABF /* PasswordField.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		EEBEC6BB25C51AA300D24768 = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +122,7 @@
 		EEBEC6C625C51AA300D24768 /* FirebaseAuthDemo */ = {
 			isa = PBXGroup;
 			children = (
+				EE7D113525CE53480048BABF /* models */,
 				EEAEB9B325C52E4E002D34CE /* GoogleService-Info.plist */,
 				EEBEC6EA25C5227B00D24768 /* observables */,
 				EEBEC6DD25C51B1E00D24768 /* helpers */,
@@ -117,11 +148,14 @@
 		EEBEC6DC25C51B1400D24768 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				EE7D114E25CE5D9B0048BABF /* components */,
 				EEBEC6E225C51CD400D24768 /* modifiers */,
 				EEBEC6CB25C51AA300D24768 /* ContentView.swift */,
 				EEBEC6DE25C51B2A00D24768 /* LoginView.swift */,
 				EEBEC71125C526EE00D24768 /* SignUpView.swift */,
 				EEBEC71425C52C9500D24768 /* ForgotPasswordView.swift */,
+				EE7D112F25CE52180048BABF /* ActivityIndicator.swift */,
+				EE7D115425CE6A180048BABF /* HomeView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -130,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				EEBEC70E25C5242400D24768 /* Extensions.swift */,
+				EE7D113225CE52CC0048BABF /* AuthenticationHelper.swift */,
+				EE7D114B25CE5A7D0048BABF /* NavigationHelper.swift */,
 			);
 			path = helpers;
 			sourceTree = "<group>";
@@ -145,6 +181,7 @@
 		EEBEC6EA25C5227B00D24768 /* observables */ = {
 			isa = PBXGroup;
 			children = (
+				EEAEB9B625C537FF002D34CE /* AccountHelper.swift */,
 			);
 			path = observables;
 			sourceTree = "<group>";
@@ -267,9 +304,16 @@
 				EEBEC6C825C51AA300D24768 /* AppDelegate.swift in Sources */,
 				EEBEC70F25C5242400D24768 /* Extensions.swift in Sources */,
 				EEBEC71525C52C9500D24768 /* ForgotPasswordView.swift in Sources */,
+				EE7D115525CE6A180048BABF /* HomeView.swift in Sources */,
 				EEBEC6CA25C51AA300D24768 /* SceneDelegate.swift in Sources */,
+				EE7D113325CE52CC0048BABF /* AuthenticationHelper.swift in Sources */,
+				EEAEB9B725C537FF002D34CE /* AccountHelper.swift in Sources */,
 				EEBEC71225C526EE00D24768 /* SignUpView.swift in Sources */,
+				EE7D114C25CE5A7D0048BABF /* NavigationHelper.swift in Sources */,
+				EE7D113025CE52180048BABF /* ActivityIndicator.swift in Sources */,
+				EE7D113725CE53500048BABF /* User.swift in Sources */,
 				EEBEC6DF25C51B2A00D24768 /* LoginView.swift in Sources */,
+				EE7D115025CE5DA80048BABF /* PasswordField.swift in Sources */,
 				EEBEC6CC25C51AA300D24768 /* ContentView.swift in Sources */,
 				EEBEC6E425C51CE100D24768 /* Modifiers.swift in Sources */,
 			);
